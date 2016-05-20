@@ -47,11 +47,11 @@ function fb_instant_articles_api_permission() {
  */
 function fb_instant_articles_api_facebook_login() {
 
-  $fb = new Facebook\Facebook([
+  $fb = new Facebook\Facebook(array(
      'app_id' => variable_get('fb_instant_articles_api_app_id', ''),
      'app_secret' => variable_get('fb_instant_articles_api_app_secret', ''),
      'default_graph_version' => 'v2.5',
-  ]);
+  ));
   $helper = $fb->getRedirectLoginHelper();
 
   // Grab the user access token based on callback response and report back an

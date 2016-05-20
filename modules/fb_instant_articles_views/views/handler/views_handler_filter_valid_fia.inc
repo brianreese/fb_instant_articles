@@ -43,12 +43,12 @@ class views_handler_filter_valid_fia extends views_handler_filter {
    */
   function options_form(&$form, &$form_state) {
     parent::options_form($form, $form_state);
-    $form['info'] = [
+    $form['info'] = array(
       '#type' => 'markup',
       '#markup' => 'Filter for nodes that implement the FIA view mode',
       '#prefix' => '<div class="clearfix">',
       '#suffix' => '</div>',
-    ];
+    );
   }
 
   /**

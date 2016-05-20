@@ -102,13 +102,13 @@ function fb_instant_articles_api_module_activation_connect_fb_account($form) {
   $fb_app_id = variable_get('fb_instant_articles_api_app_id');
   $fb_app_secret = variable_get('fb_instant_articles_api_app_secret');
 
-  $fb = new Facebook\Facebook([
+  $fb = new Facebook\Facebook(array(
     'app_id' => $fb_app_id,
     'app_secret' => $fb_app_secret,
     'default_graph_version' => 'v2.5',
-  ]);
+  ));
 
-  $permissions = ['pages_show_list', 'pages_manage_instant_articles'];
+  $permissions = array('pages_show_list', 'pages_manage_instant_articles');
   $helper = $fb->getRedirectLoginHelper();
 
   $redirect_uri = url('admin/config/services/fb-instant-articles/api/login', array('absolute' => TRUE));
@@ -148,11 +148,11 @@ function fb_instant_articles_api_module_activation_select_fb_page($form) {
   $fb_app_id = variable_get('fb_instant_articles_api_app_id', '');
   $fb_app_secret = variable_get('fb_instant_articles_api_app_secret', '');
 
-  $fb = new Facebook\Facebook([
+  $fb = new Facebook\Facebook(array(
        'app_id' => $fb_app_id,
        'app_secret' => $fb_app_secret,
        'default_graph_version' => 'v2.5',
-   ]);
+  ));
 
   $access_token_string = variable_get('fb_instant_articles_api_access_token', '');
   $expires = time() + 60 * 60 * 2;
@@ -247,11 +247,11 @@ function fb_instant_articles_api_fb_page_submit($form, &$form_state) {
   $fb_app_id = variable_get('fb_instant_articles_api_app_id', '');
   $fb_app_secret = variable_get('fb_instant_articles_api_app_secret', '');
 
-  $fb = new Facebook\Facebook([
+  $fb = new Facebook\Facebook(array(
     'app_id' => $fb_app_id,
     'app_secret' => $fb_app_secret,
     'default_graph_version' => 'v2.5',
-  ]);
+  ));
 
   $access_token_string = variable_get('fb_instant_articles_api_access_token', '');
   $expires = time() + 60 * 60 * 2;
