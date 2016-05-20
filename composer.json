@@ -8,8 +8,14 @@
     "name": "Drupal community",
     "homepage": "https://www.drupal.org/node/2676800/committers"
   }],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/darkcody/facebook-instant-articles-sdk-php"
+    }
+  ],
   "require": {
-    "facebook/facebook-instant-articles-sdk-php": "^1.0.0"
+    "facebook/facebook-instant-articles-sdk-php-53": "dev-php53"
   },
   "autoload": {
     "psr-4": {
