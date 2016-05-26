@@ -11,6 +11,18 @@ define('FB_INSTANT_ARTICLES_AD_TYPE_SOURCE_URL', 'source_url');
 define('FB_INSTANT_ARTICLES_AD_TYPE_EMBED_CODE', 'embed_code');
 
 /**
+ * Library Classes.
+ */
+//require_once drupal_get_path('library', 'facebook-instnat-articles-sdk-php') . '/src/Facebook'
+
+/**
+ * Module clases.
+ */
+require_once(drupal_get_path('module', 'fb_instant_articles') . '/src/ArticleWrapper.php');
+//require_once(drupal_get_path('module', 'fb_instant_articles') . '/src/DrupalLoggerAppender.php');
+//require_once(drupal_get_path('module', 'fb_instant_articles') . '/src/TransformerExtender.php');
+
+/**
  * Get an array of possible ad types and their descriptive names
  **/
 function fb_instant_articles_get_ad_types() {
@@ -181,7 +193,7 @@ function fb_instant_articles_init() {
       'facebook-instantarticles-client' => $appender,
     ),
   );
-  \Logger::configure($configuration);
+//  \Logger::configure($configuration);
 }
 
 /**

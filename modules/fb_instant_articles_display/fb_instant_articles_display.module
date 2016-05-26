@@ -11,6 +11,14 @@
 require_once __DIR__ . '/includes/field.inc';
 
 /**
+ * Debugging
+ */
+
+require_once(drupal_get_path('module', 'fb_instant_articles_display') . '/src/EntityFieldMapper.php');
+require_once(drupal_get_path('module', 'fb_instant_articles_display') . '/src/EntityPropertyMapper.php');
+
+
+/**
  * Implements hook_entity_load().
  */
 function fb_instant_articles_display_entity_load($entities, $type) {
@@ -273,7 +281,7 @@ function fb_instant_articles_display_get_article_entity_types() {
       'bundle' => $fia_entity_type->entity_bundle,
     );
   }
- 
+
   // Allow other modules to alter.
   drupal_alter('fb_instant_articles_display_entity_types', $entity_types);
   return $entity_types;
